@@ -48,8 +48,7 @@ def predict():
 
 		# return ret
 	else:
-		user = request.args.get('nm')
-		return redirect(url_for('success',name = user))
+		return redirect(url_for('index'))
 
 if __name__ == '__main__':
 	app.run(debug = "True")
