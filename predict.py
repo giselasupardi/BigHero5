@@ -37,13 +37,13 @@ def predict():
 		atribut = [workclass, relationship, c_gain, c_loss, education, ed_num, m_status, sex, occupation]
 		dataframe = pd.DataFrame([atribut])
 		# dataframe.columns['workclass', 'relationship', 'c_gain', 'c_loss', 'education', 'ed_num', 'm_status', 'sex', 'occupation']
-		
+
 		# load model
 		model = joblib.load('model_pembelajaran.pkl')
 		# predicting
 		prediction = model.predict(dataframe)
 
-		dict = {'label':prediction}
+		dict = {'label':prediction[0]}
 		return render_template('result.html', result = dict)
 
 		# return ret
