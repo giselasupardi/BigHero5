@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>Income Prediction</title>
+</head>
+<body>
+<form method="POST" action="http://localhost:5000/predict">
+	<table>
+		<tbody>
+		<tr>
+			<td colspan="3">Please fill out the following information
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td>:</td>
+			<td><input type="text" name="age"></td>
+		</tr>
+		<tr>
+			<td>Work Class</td>
+			<td>:</td>
+			<td><input type="text" name="workclass"></td>
+		</tr>
+		<tr>
+			<td>fnlwgt</td>
+			<td>:</td>
+			<td><input type="text" name="fnlwgt"></td>
+		</tr>
+		<tr>
+			<td>Education</td>
+			<td>:</td>
+			<td><input type="text" name="education"></td>
+		</tr>
+		<tr>
+			<td>Education Number</td>
+			<td>:</td>
+			<td><input type="text" name="education-num"></td>
+		</tr>
+		<tr>
+			<td>Marital Status</td>
+			<td>:</td>
+			<td><input type="text" name="marital-status"></td>
+		</tr>
+		<tr>
+			<td>Occupation</td>
+			<td>:</td>
+			<td><input type="text" name="occupation"></td>
+		</tr>
+		<tr>
+			<td>Relationship</td>
+			<td>:</td>
+			<td><input type="text" name="relationship"></td>
+		</tr>
+		<tr>
+			<td>Race</td>
+			<td>:</td>
+			<td><input type="text" name="race"></td>
+		</tr>
+		<tr>
+			<td>Sex</td>
+			<td>:</td>
+			<td><input type="text" name="sex"></td>
+		</tr>
+		<tr>
+			<td>Capital Gain</td>
+			<td>:</td>
+			<td><input type="text" name="capital-gain"></td>
+		</tr>
+		<tr>
+			<td>Capital Loss</td>
+			<td>:</td>
+			<td><input type="text" name="capital-loss"></td>
+		</tr>
+		<tr>
+			<td>Hours per Week</td>
+			<td>:</td>
+			<td><input type="text" name="hours-per-week"></td>
+		</tr>
+		<tr>
+			<td>Native Country</td>
+			<td>:</td>
+			<td><input type="text" name="native-country"></td>
+		</tr>
+		</tbody>
+	</table>
+	<button type="submit">Submit</button>
+</form>
+</body>
+</html>
