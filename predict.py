@@ -3,7 +3,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+	import json
+	# open map for encoded label in model
+	mapper = json.load(open('mapping_data.json'))
+	return render_template('index.html', mapper = mapper)
 
 @app.route('/predict',methods = ['POST', 'GET'])
 def predict():

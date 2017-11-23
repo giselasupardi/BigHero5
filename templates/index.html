@@ -19,7 +19,15 @@
 			<tr>
 				<td>Work Class</td>
 				<td>:</td>
-				<td><input type="text" name="workclass"></td>
+				<td>
+					<select name="workclass" class="dropdown">
+		              {% for key, value in mapper['workclass'].items() %}
+		              	{% if key != ' ?'%}
+		              		<option value="{{ key }}">{{ key }}</option>
+		              	{% endif %}
+		              {% endfor %}                                             
+		            </select>
+		        </td>
 			</tr>
 			<tr>
 				<td>fnlwgt</td>
@@ -29,7 +37,13 @@
 			<tr>
 				<td>Education</td>
 				<td>:</td>
-				<td><input type="text" name="education"></td>
+				<td>
+					<select name="education" class="dropdown">
+		              {% for key, value in mapper['education'].items() %}
+		              <option value="{{ key }}">{{ key }}</option>
+		              {% endfor %}                                              
+		            </select>
+		        </td>
 			</tr>
 			<tr>
 				<td>Education Number</td>
@@ -39,27 +53,59 @@
 			<tr>
 				<td>Marital Status</td>
 				<td>:</td>
-				<td><input type="text" name="marital-status"></td>
+				<td>
+					<select name="m_status" class="dropdown">
+		              {% for key, value in mapper['m_status'].items() %}
+		              <option value="{{ key }}">{{ key }}</option>
+		              {% endfor %}                                              
+		            </select>
+		        </td>
 			</tr>
 			<tr>
 				<td>Occupation</td>
 				<td>:</td>
-				<td><input type="text" name="occupation"></td>
+				<td>
+					<select name="occupation" class="dropdown">
+		              {% for key, value in mapper['occupation'].items() %}
+		              	{% if key != ' ?'%}
+		              		<option value="{{ key }}">{{ key }}</option>
+		              	{% endif %}
+		              {% endfor %}                                              
+		            </select>
+		        </td>
 			</tr>
 			<tr>
 				<td>Relationship</td>
 				<td>:</td>
-				<td><input type="text" name="relationship"></td>
+				<td>
+					<select name="relationship" class="dropdown">
+		              {% for key, value in mapper['relationship'].items() %}
+		              <option value="{{ key }}">{{ key }}</option>
+		              {% endfor %}                                              
+		            </select>
+		        </td>
 			</tr>
 			<tr>
 				<td>Race</td>
 				<td>:</td>
-				<td><input type="text" name="race"></td>
+				<td>
+					<select name="race" class="dropdown">
+		              {% for key, value in mapper['race'].items() %}
+		              <option value="{{ key }}">{{ key }}</option>
+		              {% endfor %}                                              
+		            </select>
+		        </td>
 			</tr>
 			<tr>
 				<td>Sex</td>
 				<td>:</td>
-				<td><input type="text" name="sex"></td>
+				<td>
+					<select name="sex" class="dropdown">
+		              {% for key, value in mapper['sex'].items() %}
+		              <option value="{{ key }}">{{ key }}</option>
+		              {% endfor %}                                              
+		            </select>
+				</td>
 			</tr>
 			<tr>
 				<td>Capital Gain</td>
@@ -79,7 +125,15 @@
 			<tr>
 				<td>Native Country</td>
 				<td>:</td>
-				<td><input type="text" name="native-country"></td>
+				<td>
+					<select name="n_country" class="dropdown">
+		              {% for key, value in mapper['n_country'].items() %}
+		              	{% if key != ' ?'%}
+		              		<option value="{{ key }}">{{ key }}</option>
+		              	{% endif %}
+		              {% endfor %}                                              
+		            </select>
+		        </td>
 			</tr>
 			</tbody>
 		</table>

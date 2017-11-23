@@ -45,6 +45,10 @@ form {
 	padding-left: 5px;
 }
 
+.dropdown {
+	width: 100%;
+}
+
 .submit-button {
 	width: 100%;
 	color: white;
