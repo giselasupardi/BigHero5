@@ -23,7 +23,9 @@ JadwalTanggal></td>
 				<td>
 					<select name="workclass" class="dropdown">
 		              {% for key, value in mapper['workclass'].items() %}
-		              	{% if key != ' ?'%}
+		              	{% if key == ' Federal-gov'%}
+		              		<option value="{{ key }}" selected>{{ key }}</option>
+		              	{% else %}
 		              		<option value="{{ key }}">{{ key }}</option>
 		              	{% endif %}
 		              {% endfor %}                                             
@@ -70,7 +72,9 @@ JadwalTanggal></td>
 				<td>
 					<select name="occupation" class="dropdown">
 		              {% for key, value in mapper['occupation'].items() %}
-		              	{% if key != ' ?'%}
+		              	{% if key == ' Adm-clerical'%}
+		              		<option value="{{ key }}" selected>{{ key }}</option>
+		              	{% else %}
 		              		<option value="{{ key }}">{{ key }}</option>
 		              	{% endif %}
 		              {% endfor %}                                              
@@ -134,7 +138,9 @@ JadwalTanggal></td>
 				<td>
 					<select name="native-country" class="dropdown">
 		              {% for key, value in mapper['n_country'].items() %}
-		              	{% if key != ' ?'%}
+		              	{% if key == ' Cambodia'%}
+		              		<option value="{{ key }}" selected>{{ key }}</option>
+		              	{% else %}
 		              		<option value="{{ key }}">{{ key }}</option>
 		              	{% endif %}
 		              {% endfor %}                                              
