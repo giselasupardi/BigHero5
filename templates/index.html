@@ -14,7 +14,7 @@
 			<tr>
 				<td>Age</td>
 				<td>:</td>
-				<td><input type="text" name="age"></td>
+				<td><input type="text" name="age" required></td>
 			</tr>
 			<tr>
 				<td>Work Class</td>
@@ -32,7 +32,7 @@
 			<tr>
 				<td>fnlwgt</td>
 				<td>:</td>
-				<td><input type="text" name="fnlwgt"></td>
+				<td><input type="text" name="fnlwgt" required></td>
 			</tr>
 			<tr>
 				<td>Education</td>
@@ -48,13 +48,13 @@
 			<tr>
 				<td>Education Number</td>
 				<td>:</td>
-				<td><input type="text" name="education-num"></td>
+				<td><input type="text" name="education-num" required></td>
 			</tr>
 			<tr>
 				<td>Marital Status</td>
 				<td>:</td>
 				<td>
-					<select name="m_status" class="dropdown">
+					<select name="marital-status" class="dropdown">
 		              {% for key, value in mapper['m_status'].items() %}
 		              <option value="{{ key }}">{{ key }}</option>
 		              {% endfor %}                                              
@@ -110,23 +110,23 @@
 			<tr>
 				<td>Capital Gain</td>
 				<td>:</td>
-				<td><input type="text" name="capital-gain"></td>
+				<td><input type="text" name="capital-gain" required></td>
 			</tr>
 			<tr>
 				<td>Capital Loss</td>
 				<td>:</td>
-				<td><input type="text" name="capital-loss"></td>
+				<td><input type="text" name="capital-loss" required></td>
 			</tr>
 			<tr>
 				<td>Hours per Week</td>
 				<td>:</td>
-				<td><input type="text" name="hours-per-week"></td>
+				<td><input type="text" name="hours-per-week" required></td>
 			</tr>
 			<tr>
 				<td>Native Country</td>
 				<td>:</td>
 				<td>
-					<select name="n_country" class="dropdown">
+					<select name="native-country" class="dropdown">
 		              {% for key, value in mapper['n_country'].items() %}
 		              	{% if key != ' ?'%}
 		              		<option value="{{ key }}">{{ key }}</option>
