@@ -28,7 +28,7 @@ def predict():
 		## age
 		age = request.form['age']
 		## workclass
-		req = " " + request.form['workclass']
+		req = request.form['workclass']
 		if req in mapper["workclass"]:
 			if req == " ?":
 				workclass = modes["workclass"]
@@ -39,7 +39,7 @@ def predict():
 		## fnlwgt
 		fnlwgt = request.form['fnlwgt']
 		## education
-		req = " " + request.form['education']
+		req = request.form['education']
 		if req in mapper["education"]:
 			education = mapper["education"][req]
 		else: # ganti jadi modus, ambil dari file eksternal
@@ -47,13 +47,13 @@ def predict():
 		## education-num
 		ed_num = request.form['education-num']
 		## marital-status
-		req = " " + request.form['marital-status']
+		req = request.form['marital-status']
 		if req in mapper["m_status"]:
 			m_status = mapper["m_status"][req]
 		else: # ganti jadi modus, ambil dari file eksternal
 			m_status = modes["m_status"]
 		## occupation
-		req = " " + request.form['occupation']
+		req = request.form['occupation']
 		if req in mapper["occupation"]:
 			if req == " ?":
 				occupation = modes["occupation"]
@@ -62,19 +62,19 @@ def predict():
 		else: # ganti jadi modus, ambil dari file eksternal
 			occupation = modes["occupation"]
 		## relationship
-		req = " " + request.form['relationship']
+		req = request.form['relationship']
 		if req in mapper["relationship"]:
 			relationship = mapper["relationship"][req]
 		else: # ganti jadi modus, ambil dari file eksternal
 			relationship = modes["relationship"]
 		## race
-		req = " " + request.form['race']
+		req = request.form['race']
 		if req in mapper["race"]:
 			race = mapper["race"][req]
 		else: # ganti jadi modus, ambil dari file eksternal
 			race = modes["race"]
 		## sex
-		req = " " + request.form['sex']
+		req = request.form['sex']
 		if req in mapper["sex"]:
 			sex = mapper["sex"][req]
 		else: # ganti jadi modus, ambil dari file eksternal
@@ -86,7 +86,7 @@ def predict():
 		## hours-per-week
 		hpw = request.form['hours-per-week']
 		## native-country
-		req = " " + request.form['native-country']
+		req = request.form['native-country']
 		if req in mapper["n_country"]:
 			if req == " ?":
 				n_country = modes["n_country"]
@@ -95,7 +95,37 @@ def predict():
 		else: # ganti jadi modus, ambil dari file eksternal
 			n_country = modes["n_country"]
 
-		atribut = [workclass, relationship, c_gain, c_loss, education, ed_num, m_status, sex, occupation]
+		atribut = [c_gain, c_loss, ed_num, sex]
+		## relationship
+		for x in range(6):
+			if x == relationship:
+				atribut.append(1)
+			else:
+				atribut.append(0)
+		## workclass
+		for x in range(8):
+			if x == workclass:
+				atribut.append(1)
+			else:
+				atribut.append(0)
+		## education
+		for x in range(16):
+			if x == education:
+				atribut.append(1)
+			else:
+				atribut.append(0)
+		## m_status
+		for x in range(7):
+			if x == m_status:
+				atribut.append(1)
+			else:
+				atribut.append(0)
+		## occupation
+		for x in range(14):
+			if x == occupation:
+				atribut.append(1)
+			else:
+				atribut.append(0)
 		dataframe = pd.DataFrame([atribut])
 		
 		# load model
