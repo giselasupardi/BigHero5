@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Income Prediction</title>
+        <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='master.css') }}">
+    </head>
+    <body>
+    <div class="page-content">
+        <form method="POST" action="http://localhost:5000/predict">
+            <table class="form-table">
+                <tbody>
+                <tr>
+                    <td colspan="3">Please fill out the following information
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>:</td>
+                    <td><input type="text" name="age" onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 8 || event.charCode == 9'
+    JadwalTanggal></td>
+                </tr>
+                <tr>
+                    <td>Work Class</td>
+                    <td>:</td>
+                    <td>
+                        <select name="workclass" class="dropdown">
+                          {% for key, value in mapper['workclass'].items() %}
+                              {% if key == ' Federal-gov'%}
+                                  <option value="{{ key }}" selected>{{ key }}</option>
+                              {% else %}
+                                  <option value="{{ key }}">{{ key }}</option>
+                              {% endif %}
+                          {% endfor %}                                             
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>fnlwgt</td>
+                    <td>:</td>
+                    <td><input type="text" name="fnlwgt" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+    JadwalTanggal></td>
+                </tr>
+                <tr>
+                    <td>Education</td>
+                    <td>:</td>
+                    <td>
+                        <select name="education" class="dropdown">
+                          {% for key, value in mapper['education'].items() %}
+                          <option value="{{ key }}">{{ key }}</option>
+                          {% endfor %}                                              
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Education Number</td>
+                    <td>:</td>
+                    <td><input type="text" name="education-num" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+    JadwalTanggal></td>
+                </tr>
+                <tr>
+                    <td>Marital Status</td>
+                    <td>:</td>
+                    <td>
+                        <select name="marital-status" class="dropdown">
+                          {% for key, value in mapper['m_status'].items() %}
+                          <option value="{{ key }}">{{ key }}</option>
+                          {% endfor %}                                              
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Occupation</td>
+                    <td>:</td>
+                    <td>
+                        <select name="occupation" class="dropdown">
+                          {% for key, value in mapper['occupation'].items() %}
+                              {% if key == ' Adm-clerical'%}
+                                  <option value="{{ key }}" selected>{{ key }}</option>
+                              {% else %}
+                                  <option value="{{ key }}">{{ key }}</option>
+                              {% endif %}
+                          {% endfor %}                                              
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Relationship</td>
+                    <td>:</td>
+                    <td>
+                        <select name="relationship" class="dropdown">
+                          {% for key, value in mapper['relationship'].items() %}
+                          <option value="{{ key }}">{{ key }}</option>
+                          {% endfor %}                                              
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Race</td>
+                    <td>:</td>
+                    <td>
+                        <select name="race" class="dropdown">
+                          {% for key, value in mapper['race'].items() %}
+                          <option value="{{ key }}">{{ key }}</option>
+                          {% endfor %}                                              
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sex</td>
+                    <td>:</td>
+                    <td>
+                        <select name="sex" class="dropdown">
+                          {% for key, value in mapper['sex'].items() %}
+                          <option value="{{ key }}">{{ key }}</option>
+                          {% endfor %}                                              
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Capital Gain</td>
+                    <td>:</td>
+                    <td><input type="text" name="capital-gain" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+    JadwalTanggal></td>
+                </tr>
+                <tr>
+                    <td>Capital Loss</td>
+                    <td>:</td>
+                    <td><input type="text" name="capital-loss" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+    JadwalTanggal></td>
+                </tr>
+                <tr>
+                    <td>Hours per Week</td>
+                    <td>:</td>
+                    <td><input type="text" name="hours-per-week" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+    JadwalTanggal></td>
+                </tr>
+                <tr>
+                    <td>Native Country</td>
+                    <td>:</td>
+                    <td>
+                        <select name="native-country" class="dropdown">
+                          {% for key, value in mapper['n_country'].items() %}
+                              {% if key == ' Cambodia'%}
+                                  <option value="{{ key }}" selected>{{ key }}</option>
+                              {% else %}
+                                  <option value="{{ key }}">{{ key }}</option>
+                              {% endif %}
+                          {% endfor %}                                              
+                        </select>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+        <button class="cancel-button" onclick="window.location.href='http://localhost:5000/'">Cancel</button>
+    </div>
+    </body>
+</html>

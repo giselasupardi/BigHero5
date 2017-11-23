@@ -3,10 +3,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+	return render_template('index.html')
+
+@app.route('/about')
+def about():
+	return render_template('about.html')
+
+@app.route('/form')
+def form():
 	import json
 	# open map for encoded label in model
 	mapper = json.load(open('mapping_data.json'))
-	return render_template('index.html', mapper = mapper)
+	return render_template('form.html', mapper = mapper)
 
 @app.route('/predict',methods = ['POST', 'GET'])
 def predict():
@@ -138,7 +146,7 @@ def predict():
 
 		# return ret
 	else:
-		return redirect(url_for('index'))
+		return redirect(url_for('form'))
 
 if __name__ == '__main__':
 	app.run(debug = "True")

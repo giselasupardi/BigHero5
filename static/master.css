@@ -1,5 +1,5 @@
 body {
-	background: azure;
+	background-image: url("img/background.jpg");
 }
 
 .page-content {
@@ -54,13 +54,27 @@ form {
 	color: white;
 	background-color: #93c47d;
 	text-align: center;
-	height: 30;
+	height: 30px;
 	border-color: darkgreen;
 	border-width: 1px;
 }
 
 .submit-button:hover {
 	background-color: green;
+}
+
+.cancel-button {
+	width: 100%;
+	color: white;
+	background-color: #c47d7d;
+	text-align: center;
+	height: 30px;
+	border-color: darkred;
+	border-width: 1px;
+}
+
+.cancel-button:hover {
+	background-color: red;
 }
 
 /* result page styling */
@@ -77,4 +91,154 @@ form {
 
 .resval:hover {
 	text-decoration: underline;
+}
+
+.title-image {
+	margin-top: 100px;
+	margin-left: 200px;
+	margin-bottom: 20px;
+	width: 70%;
+	display: inline-block;
+}
+
+.menu-button {
+	text-align: center;
+	background-color: transparent;
+	height: 50px;
+	width: 200px;
+	border-color: white;
+	border-width: 5px;
+	color: white;
+	font-size: 20pt;
+	font-weight: bolder;
+	margin-left: 550px;
+	margin-right: 550px;
+	margin-top: 20px; 
+}
+
+.menu-button:hover {
+	background-color: rgb(196, 196, 196);
+	color: black;
+	border-color: black;
+}
+
+.round-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+	display: inline-block;
+    position: absolute;
+}
+
+.big-circle {
+	width:300px;
+	height:300px;
+	border-radius:50%;
+	background-color: transparent;
+	display: inline-block;
+	position: absolute;
+	margin-top: 170px;
+	margin-left: 480px;
+}
+
+#one {
+	height: 150px;
+    width: 150px;
+    border-radius: 50%;
+	display: inline-block;
+    position: absolute;
+	left: -145px;
+    top: -10px;
+}
+
+.two {
+	top: -160px;
+    left: 70px;
+}
+
+.three {
+	right: -150px;
+    top: 0px;
+}
+
+.four {
+	right: -65px;
+    bottom: -110px;
+}
+
+.five {
+	bottom: -110px;
+    left: -70px;
+}
+
+#nama-nim-one {
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+	margin-top: 120px;
+	text-align: center;
+	display: none;
+}
+
+#nama-nim-two {
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+	margin-top: 120px;
+	text-align: center;
+	display: none;
+}
+
+#nama-nim-three {
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+	margin-top: 120px;
+	text-align: center;
+	display: none;
+}
+
+#nama-nim-four {
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+	margin-top: 120px;
+	text-align: center;
+	display: none;
+}
+
+#nama-nim-five {
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+	margin-top: 120px;
+	text-align: center;
+	display: none;
+}
+
+.image1:hover #nama-nim-one {
+	display: block;
+}
+
+.image2:hover #nama-nim-two {
+	display: block;
+}
+
+.image3:hover #nama-nim-three {
+	display: block;
+}
+
+.image4:hover #nama-nim-four {
+	display: block;
+}
+
+.image5:hover #nama-nim-five {
+	display: block;
+}
+
+.title-text {
+	font-size: 40px;
+	font-weight: bolder;
+	color: white;
+	text-align: center;
 }
