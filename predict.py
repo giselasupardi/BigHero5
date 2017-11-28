@@ -60,6 +60,11 @@ def predict():
 			m_status = mapper["m_status"][req]
 		else: # ganti jadi modus, ambil dari file eksternal
 			m_status = modes["m_status"]
+		## change to married / unmarried
+		if (m_status == 0 or m_status >= 4):
+			m_status = 1
+		else:
+			m_status = 0
 		## occupation
 		req = request.form['occupation']
 		if req in mapper["occupation"]:
@@ -103,7 +108,8 @@ def predict():
 		else: # ganti jadi modus, ambil dari file eksternal
 			n_country = modes["n_country"]
 
-		atribut = [c_gain, c_loss, ed_num, sex]
+		# add needed attributes for prediction
+		atribut = [ed_num, m_status, c_gain, c_loss]
 		## relationship
 		for x in range(6):
 			if x == relationship:
@@ -122,18 +128,6 @@ def predict():
 				atribut.append(1)
 			else:
 				atribut.append(0)
-		## m_status
-		for x in range(7):
-			if x == m_status:
-				atribut.append(1)
-			else:
-				atribut.append(0)
-		## occupation
-		for x in range(14):
-			if x == occupation:
-				atribut.append(1)
-			else:
-				atribut.append(0)
 		dataframe = pd.DataFrame([atribut])
 		
 		# load model
@@ -141,7 +135,12 @@ def predict():
 		# predicting
 		prediction = model.predict(dataframe)
 
-		dict = {'label':prediction[0]}
+		if (prediction == 0):
+			prediction = "<=50K"
+		else:
+			prediction = ">50K"
+
+		dict = {'label':prediction}
 		return render_template('result.html', result = dict)
 
 		# return ret
