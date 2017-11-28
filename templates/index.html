@@ -2,15 +2,17 @@
 <html>
 <head>
 	<title>Income Prediction</title>
+	<link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}">
 	<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='master.css') }}">
 </head>
 <body>
-<div class="title">
+<div class="text-center">
 	<img class="title-image" src="/static/img/title.png">
 </div>
-<div class="menu">
-	<button class="menu-button" onclick="window.location.href='http://localhost:5000/form'">Start Predict</button>
-	<button class="menu-button" onclick="window.location.href='http://localhost:5000/about'">About Us</button>
+<div class="text-center">
+	<button class="menu-button font-abscissa" onclick="window.location.href='http://localhost:5000/form'">Start Predict</button>
+	<br>
+	<button class="menu-button font-abscissa" onclick="window.location.href='http://localhost:5000/about'">About Us</button>
 </div>
 
 </body>

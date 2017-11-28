@@ -2,12 +2,14 @@
 <html>
     <head>
         <title>Income Prediction</title>
+        <link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}">
         <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='master.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
     <div class="page-content">
         <form method="POST" action="http://localhost:5000/predict">
-            <table class="form-table">
+            <table class="form-table font-noto">
                 <tbody>
                 <tr>
                     <td colspan="3">Please fill out the following information
@@ -15,8 +17,7 @@
                 <tr>
                     <td>Age</td>
                     <td>:</td>
-                    <td><input type="text" name="age" onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 8 || event.charCode == 9'
-    JadwalTanggal></td>
+                    <td><input required type="text" name="age" onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 8 || event.charCode == 9'></td>
                 </tr>
                 <tr>
                     <td>Work Class</td>
@@ -36,8 +37,7 @@
                 <tr>
                     <td>fnlwgt</td>
                     <td>:</td>
-                    <td><input type="text" name="fnlwgt" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-    JadwalTanggal></td>
+                    <td><input required type="text" name="fnlwgt" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></td>
                 </tr>
                 <tr>
                     <td>Education</td>
@@ -53,8 +53,7 @@
                 <tr>
                     <td>Education Number</td>
                     <td>:</td>
-                    <td><input type="text" name="education-num" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-    JadwalTanggal></td>
+                    <td><input required type="text" name="education-num" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></td>
                 </tr>
                 <tr>
                     <td>Marital Status</td>
@@ -118,20 +117,17 @@
                 <tr>
                     <td>Capital Gain</td>
                     <td>:</td>
-                    <td><input type="text" name="capital-gain" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-    JadwalTanggal></td>
+                    <td><input required type="text" name="capital-gain" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></td>
                 </tr>
                 <tr>
                     <td>Capital Loss</td>
                     <td>:</td>
-                    <td><input type="text" name="capital-loss" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-    JadwalTanggal></td>
+                    <td><input required type="text" name="capital-loss" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></td>
                 </tr>
                 <tr>
                     <td>Hours per Week</td>
                     <td>:</td>
-                    <td><input type="text" name="hours-per-week" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-    JadwalTanggal></td>
+                    <td><input required type="text" name="hours-per-week" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></td>
                 </tr>
                 <tr>
                     <td>Native Country</td>
@@ -150,9 +146,9 @@
                 </tr>
                 </tbody>
             </table>
-            <button type="submit" class="submit-button">Submit</button>
+            <button type="submit" class="submit-button font-abscissa">Submit</button>
         </form>
-        <button class="cancel-button" onclick="window.location.href='http://localhost:5000/'">Cancel</button>
+        <button class="cancel-button font-abscissa" onclick="window.location.href='http://localhost:5000/'">Cancel</button>
     </div>
     </body>
 </html>

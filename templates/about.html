@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Income Prediction</title>
+        <title>Big Hero 5</title>
+        <link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}">
         <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='master.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <a href="http://localhost:5000/"><img src="/static/img/back.png" id="back-icon"></a>
         <div class="title-text">About Us</div>
         </br>
+        <div class="text-center">
         <div class="big-circle">
             <div class="image1">
                 <img id="one" src="/static/img/gisel.png" alt="Gisela Supardi">
@@ -28,6 +32,7 @@
                 <img src="/static/img/kevin.png" class="round-image five" alt="Kevin">
                 <span id="nama-nim-five">Kevin</br>13515138</span>
             </div>
+        </div>
         </div>
     </body>
 </html>

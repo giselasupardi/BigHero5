@@ -1,5 +1,20 @@
+/* global styling */
+@font-face {
+	font-family: "Abscissa";
+	src: url("font/Abscissa.ttf");
+}
+
+@font-face {
+	font-family: "Noto Sans";
+	src: url("font/notosans-regular.ttf");
+}
+
 body {
 	background-image: url("img/background.jpg");
+}
+
+.text-center {
+	text-align: center;
 }
 
 .page-content {
@@ -9,13 +24,24 @@ body {
 	padding: 5px;
 }
 
-/* index page styling */
+.font-abscissa {
+	font-family: "Abscissa";
+}
+
+.font-noto {
+	font-family: "Noto Sans";
+	font-size: 13px;
+}
+
+/* form page styling */
 form {
 	width: 100%;
 }
 
 .form-table {
 	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
 }
 
 .form-table td {
@@ -41,8 +67,15 @@ form {
 }
 
 .form-table input {
-	width: 100%;
+	width: 97%;
 	padding-left: 5px;
+	font-family: "Noto Sans";
+	font-size: 12px;
+}
+
+.form-table select {
+	font-family: "Noto Sans";
+	font-size: 12px;
 }
 
 .dropdown {
@@ -81,6 +114,9 @@ form {
 .result {
 	margin: 11rem auto;
 	text-align: center;
+	background-color: papayawhip;
+	padding: 10px;
+	border: 10px double green;
 }
 
 .resval {
@@ -94,13 +130,11 @@ form {
 }
 
 .title-image {
-	margin-top: 100px;
-	margin-left: 200px;
-	margin-bottom: 20px;
+	margin: 100px 20px auto;
 	width: 70%;
-	display: inline-block;
 }
 
+/* index page styling */
 .menu-button {
 	text-align: center;
 	background-color: transparent;
@@ -111,15 +145,20 @@ form {
 	color: white;
 	font-size: 20pt;
 	font-weight: bolder;
-	margin-left: 550px;
-	margin-right: 550px;
-	margin-top: 20px; 
+	margin: 20px 0 auto;
 }
 
 .menu-button:hover {
 	background-color: rgb(196, 196, 196);
 	color: black;
 	border-color: black;
+}
+
+/* about us page styling */
+#back-icon {
+	position: absolute;
+	width: 40px;
+	margin: 8px 20%;
 }
 
 .round-image {
@@ -136,9 +175,8 @@ form {
 	border-radius:50%;
 	background-color: transparent;
 	display: inline-block;
-	position: absolute;
-	margin-top: 170px;
-	margin-left: 480px;
+	position: relative;
+	margin: 170px 0 auto;
 }
 
 #one {
@@ -241,4 +279,24 @@ form {
 	font-weight: bolder;
 	color: white;
 	text-align: center;
+}
+
+/* styling for narrow page */
+@media screen and (max-width: 1000px) {
+	#back-icon {
+		margin: 8px 10%;
+	}
+}
+@media screen and (max-width: 780px) {
+	#back-icon {
+		margin: 8px;
+	}
+}
+@media screen and (max-width: 501px) {
+	.page-content {
+		width: 100%
+	}
+	.page-content {
+		width: 100%
+	}
 }
